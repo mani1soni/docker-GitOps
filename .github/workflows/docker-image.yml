@@ -26,11 +26,7 @@ jobs:
       
     - name: clone kube repo
       run: git clone https://github.com/mani1soni/Kube-GitOps.git && cd Kube-GitOps/nginx
-
-clone:
-    runs-on: ubuntu-latest
-
-    steps:
+      
     - uses: actions/checkout@v1
     - uses: chrisdickinson/setup-yq@latest
     - name: Show folks how to run YQ:
