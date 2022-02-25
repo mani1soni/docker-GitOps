@@ -39,7 +39,6 @@ jobs:
       run: git clone https://github.com/mani1soni/Kube-GitOps.git
 
     - name: switch directory 
-      run: cd Kube-GitOps && pwd
-    - name: list items
-      run: ls -lrt
+      run: cd Kube-GitOps && ls -lrt
+ 
     
