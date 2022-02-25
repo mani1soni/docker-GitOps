@@ -1,6 +1,5 @@
 name: Docker Image CI
 
-
 on:
   push:
     branches: [ main ]
@@ -8,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-
+  
   build:
 
     runs-on: ubuntu-latest
@@ -27,6 +26,7 @@ jobs:
       
     - name: clone kube repo
       run: git clone https://github.com/mani1soni/Kube-GitOps.git && cd Kube-GitOps/nginx
-      
-    - name: install yq
-      run: apt install yq
+    - name: download yq
+      run: wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O /usr/bin/yq && chmod +x /usr/bin/yq
+
+
