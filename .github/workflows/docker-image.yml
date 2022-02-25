@@ -1,5 +1,6 @@
 name: Docker Image CI
 
+
 on:
   push:
     branches: [ main ]
@@ -23,3 +24,9 @@ jobs:
       run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USER }}/gitops:$GITHUB_RUN_NUMBER
     - name: Docker push
       run: docker push ${{ secrets.DOCKER_USER }}/gitops:$GITHUB_RUN_NUMBER
+      
+    - name: clone kube repo
+      run: git clone https://github.com/mani1soni/Kube-GitOps.git && cd Kube-GitOps/nginx
+      
+    - name: install yq
+      run: apt install yq
