@@ -14,5 +14,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Docker Login
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PSSWORD: ${{secrets.DOCKER_PSSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PSSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag manisomanish/gitops:$(date +%s)
+      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/gitops:$(date +%s)
+    - name: Docker push
+      run: docker push ${{secrets.DOCKER_USER}}/gitops:$(date +%s)
