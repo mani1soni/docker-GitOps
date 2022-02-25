@@ -17,9 +17,9 @@ jobs:
     - name: Docker Login
       env:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
-        DOCKER_PSSWORD: ${{secrets.DOCKER_PSSWORD}}
+        DOCKER_PSSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PSSWORD
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/gitops:$(date +%s)
     - name: Docker push
