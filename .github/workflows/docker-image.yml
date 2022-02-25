@@ -40,5 +40,6 @@ jobs:
 
     - name: switch directory 
       run: cd Kube-GitOps && yq w -i deployment.yml spec.template.spec.containers[0].image docker.io/${{ secrets.DOCKER_USER }}/gitops:$GITHUB_RUN_NUMBER
- 
+    - name: to show yaml
+      run: cat deployment.yml
     
