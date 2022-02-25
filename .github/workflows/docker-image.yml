@@ -36,7 +36,7 @@ jobs:
       run: yq --help
   
     - name: clone kube repo
-      run: git clone https://github.com/mani1soni/Kube-GitOps.git && cd Kube-GitOps/nginx && cd Kube-GitOps/nginx
+      run: git clone https://github.com/mani1soni/Kube-GitOps.git && cd Kube-GitOps/nginx
 
     - name: list item
       run: ls -lrt
