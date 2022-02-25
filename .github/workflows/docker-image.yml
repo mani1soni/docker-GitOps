@@ -29,5 +29,8 @@ jobs:
       
     - uses: actions/checkout@v1
     - uses: chrisdickinson/setup-yq@latest
+    
+    - name: clone the repo
+      run: ls -lrt
 
     
