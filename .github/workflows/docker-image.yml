@@ -34,7 +34,7 @@ jobs:
     
   
 
-    - name: switch directory 
+    - name: update manifest file
       run: |
         git clone https://github.com/mani1soni/Kube-GitOps.git
         cd Kube-GitOps/nginx 
